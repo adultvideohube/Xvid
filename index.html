@@ -63,7 +63,7 @@
         .ad-container {
             width: 100%;
             height: 10vh;
-            background-color: #000000;
+            background-color: #fff;
             text-align: center;
             display: flex;
             align-items: center;
@@ -94,7 +94,7 @@
 </head>
 <body>
     <header>
-        <h1>Video VIRAL! 🚀🔥</h1>
+        <h1>Video Explorer</h1>
     </header>
 <script type='text/javascript' src='//listenerhooter.com/85/d0/23/85d023a65bb254e33f7126d93c57ddbe.js'></script>
 <script type='text/javascript' src='//listenerhooter.com/9c/e1/e4/9ce1e47c973638b2f1b60619dff93c31.js'></script>
@@ -173,23 +173,39 @@
         }
 
         function openVideo(driveId) {
-            let videoUrl = `https://cdn.videy.co/${driveId}.mp4`;
-            history.pushState({ video: driveId }, "", `?video=${driveId}`);
-            
-            document.getElementById('movies-container').style.display = 'none';
-            document.getElementById('video-container').style.display = 'block';
-            
-            let videoFrame = document.getElementById('video-frame');
-            videoFrame.src = videoUrl;
-            videoFrame.setAttribute("allow", "autoplay");
-            
-            // Tambahkan kode Histats hanya saat video diputar
-            let histatsScript = document.createElement('script');
-            histatsScript.type = 'text/javascript';
-            histatsScript.src = '//s10.histats.com/js15_as.js';
-            histatsScript.async = true;
-            document.body.appendChild(histatsScript);
-        }
+    let videoUrl = `https://cdn.videy.co/${driveId}.mp4`;
+    history.pushState({ video: driveId }, "", `?video=${driveId}`);
+    
+    document.getElementById('movies-container').style.display = 'none';
+    document.getElementById('video-container').style.display = 'block';
+    
+    let videoFrame = document.getElementById('video-frame');
+    videoFrame.src = videoUrl;
+    videoFrame.setAttribute("allow", "autoplay");
+    
+    // Hapus Histats lama jika ada, agar tidak duplikat
+    let oldHistats = document.getElementById('histats-script');
+    if (oldHistats) {
+        oldHistats.remove();
+    }
+
+    // Tambahkan kode Histats hanya saat video diputar
+    let histatsScript = document.createElement('script');
+    histatsScript.id = 'histats-script';
+    histatsScript.type = 'text/javascript';
+    histatsScript.innerHTML = `
+        var _Hasync= _Hasync|| [];
+        _Hasync.push(['Histats.start', '1,4922497,4,0,0,0,00000000']);
+        _Hasync.push(['Histats.fasi', '1']);
+        _Hasync.push(['Histats.track_hits', '']);
+        (function() {
+            var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+            hs.src = ('//s10.histats.com/js15_as.js');
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+        })();
+    `;
+    document.body.appendChild(histatsScript);
+}
 
         function closeVideo() {
             let videoFrame = document.getElementById('video-frame');

@@ -63,7 +63,7 @@
         .ad-container {
             width: 100%;
             height: 10vh;
-            background-color: #030000;
+            background-color: #fff;
             text-align: center;
             display: flex;
             align-items: center;
@@ -105,7 +105,46 @@
         
         <div class="ad-container">
             <!-- Kode iklan Adsterra di bawah video -->
-            <script type="text/javascript" src="https://www.adsterra.com/adscript.js"></script>
+<style type="text/css">
+  .mobileShow {display: none;}
+
+  /* Smartphone Portrait and Landscape */
+  @media only screen
+    and (min-device-width : 320px)
+    and (max-device-width : 480px){ 
+      .mobileShow {display: inline;}
+  }
+  .mobileHide { display: inline; }
+
+  /* Smartphone Portrait and Landscape */
+  @media only screen
+    and (min-device-width : 320px)
+    and (max-device-width : 480px){
+     .mobileHide { display: none;}
+  }
+</style>
+
+     <div class="mobileShow">
+<center><script type="text/javascript">
+	atOptions = {
+		'key' : 'a257018964215ce0fbbe0e3c6462323e',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//listenerhooter.com/a257018964215ce0fbbe0e3c6462323e/invoke.js"></script></center></div>
+<div class="mobileHide"><center><script type="text/javascript">
+	atOptions = {
+		'key' : '324a58aaeb0445cce8ca88475d28089c',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//listenerhooter.com/324a58aaeb0445cce8ca88475d28089c/invoke.js"></script></center></div>
         </div>
         
         <button class="back-button" onclick="closeVideo()">Back</button>
@@ -115,7 +154,7 @@
         const movies = [
             { title: "Movie 1", driveId: "cenAcoL11" },
             { title: "Movie 2", driveId: "jhB92t7f1" },
-            { title: "slim girl spends her day in the room 😮‍💨💕 VIRAL! 🚀🔥", driveId: "prQ45vx01" },
+            { title: "slim girl spends her day in the room 😮‍💨💕 VIRAL! 🚀🔥", driveId: "xyz123abc" },
             { title: "Movie 4", driveId: "lmn456def" }
         ];
 

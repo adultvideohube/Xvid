@@ -60,18 +60,6 @@
             height: 85vh;
             border: none;
         }
-        .ad-container {
-            width: 100%;
-            height: 10vh;
-            background-color: #fff;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            bottom: 10vh;
-            left: 0;
-        }
         .back-button {
             display: block;
             margin: auto;
@@ -105,6 +93,7 @@
     <div class="video-container" id="video-container">
         <iframe id="video-frame" class="video-frame" allow="autoplay" frameborder="0" allowfullscreen></iframe>
         
+        <div class="ad-container">
 <style type="text/css">
   .mobileShow {display: none;}
 
@@ -145,6 +134,8 @@
 	};
 </script>
 <script type="text/javascript" src="//listenerhooter.com/fe1d2ae890a7d2443d36d8183f2cf16d/invoke.js"></script></center></div>
+        </div>
+        
         <button class="back-button" onclick="closeVideo()">Back</button>
     </div>
 
